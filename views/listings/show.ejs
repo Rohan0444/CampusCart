@@ -1,7 +1,7 @@
-<% layout("/layouts/boilerplate") -%>
+<% layout("/layouts/boilerplate2") -%>
 <body>
   <div class="row">
-    <div class="col-8 offset-3">
+    <div class="col-8 offset-3 my-3">
       <h3><%= listing.title %></h3>
     </div>
     <div class="card col-6 offset-3 show-card listing-card">
@@ -11,15 +11,28 @@
         alt="listing_image"
       />
       <div class="card-body">
-        <p class="card-text">Owned by <i><%= listing.owner.username %></i></p>
+  <p class="card-text my-3">
+    <span class="card-text"><b>Seller Name:</b> <%= listing.owner.username %>
+  </p>
 
-        <p class="card-text"><%= listing.description %></p>
-        <p class="card-text">
-            &#8377; <%= listing.price.toLocaleString("en-IN") %>
-        </p>
-        <p class="card-text"><%= listing.location %></p>
-        <p class="card-text"><%= listing.country %></p>
-      </div>
+  <p class="card-text mb-3">
+    <strong>Description:</strong>
+    <%= listing.description %>
+  </p>
+
+  <p class="card-text mb-3">
+    <strong>Price:</strong> ₹ <%= listing.price.toLocaleString("en-IN") %>
+  </p>
+
+  <p class="card-text mb-3">
+    <strong>Hostel:</strong> <%= listing.hostel %>
+  </p>
+
+  <p class="card-text mb-2">
+    <strong>Room No:</strong> <%= listing.roomNumber %>
+  </p>
+</div>
+
     </div>
 
     <br />
@@ -34,6 +47,19 @@
       <form method="post" action="/listings/<%=listing._id%>?_method=DELETE">
         <button class="btn btn-dark offset-5">Delete</button>
       </form>
+    </div>
+    <% } else{ %>
+    <div class="btn mb-3">
+      <div class="btns mb-3">
+        <a
+          href="/listings/buy "
+          class="btn btn-dark col-1 offset-3 edit-btn"
+          >Buy</a
+        >
+        <form method="post" action="/<%=listing._id%>/cart">
+          <button class="btn btn-dark offset-6 col-12">Add to cart</button>
+        </form>
+      </div>
     </div>
     <% } %>
 
@@ -82,10 +108,11 @@
         <hr />
         <% } %>
 
-      <p><b>All Reviews</b></p>
+      <p><b>Reviews for This Seller</b></p>
+
 
       <div class="row">
-        <% for(review of listing.reviews) { %>
+        <% for(review of listing.owner.reviews) { %>
         <div class="card col-5 ms-3 mb-3">
           <div class="card-body">
             <h5 class="card-title">@<%= review.author.username %></h5>

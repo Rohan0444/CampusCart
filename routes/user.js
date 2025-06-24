@@ -3,6 +3,7 @@ const router = express.Router({ mergeParams: true });
 const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware.js");
 
+const { isLoggedIn } = require("../middleware.js");
 const userController = require("../controllers/users.js");
 
 router
@@ -21,6 +22,10 @@ router
     }),
     userController.login
   );
+
+router.post("/:id/cart", isLoggedIn, userController.addToCart);
+
+router.get("/cart", isLoggedIn, userController.getCart);
 
 router.get("/logout", userController.logout);
 

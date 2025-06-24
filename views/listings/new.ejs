@@ -1,4 +1,4 @@
-<% layout("/layouts/boilerplate") -%>
+<% layout("/layouts/boilerplate2") -%>
 <body>
     <div class="row mt-3">
         <div class="col-8 offset-2">
@@ -32,31 +32,31 @@
                 </div>
                 
                 <div class="row">
-                    <div class="mb-3 col-md-4">
+                    <div class="mb-3 col-md-6">
+                        <label form="hostel" class="form-label">Hostel</label>
+                        <input name="listing[hostel]" placeholder="Bhabha Hall" type="text" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter the hostel name!
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label form="roomNumber" class="form-label">Room Number</label>
+                        <input name="listing[roomNumber]" placeholder="G-10" type="text" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter the room number!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
                         <label form="price" class="form-label">Price</label>
                         <input name="listing[price]" placeholder="1200" type="text" class="form-control" required>
                         <div class="invalid-feedback">
                             Please enter a valid price!
                         </div>
                     </div>
-
-                    <div class="mb-3 col-md-8">
-                        <label form="country" class="form-label">Country</label>
-                        <input name="listing[country]" placeholder="India" type="text" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Please enter the country name!
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label form="location" class="form-label">Location</label>
-                    <input name="listing[location]" placeholder="Jaipur, Rajasthan" type="text" class="form-control" required>
-                    <div class="invalid-feedback">
-                        Please enter the location name!
-                    </div>
-                </div>
-                <button class="btn btn-dark add-btn mt-3 mb-3">Add</button>
+                <button class="btn btn-dark mt-3 mb-3" style="background-color: #6351ce;">Add</button>
             </form>
         </div>
     </div>

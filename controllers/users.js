@@ -6,8 +6,8 @@ module.exports.renderSignup = (req, res) => {
 
 module.exports.signup = async (req, res) => {
     try {
-      let { username, email, password } = req.body;
-      const newUser = new User({ email, username });
+      let { username, email, password, hostel, roomNumber  } = req.body;
+      const newUser = new User({ email, username, hostel, roomNumber });
       const registerUser = await User.register(newUser, password);
       console.log(registerUser);
       req.login(registerUser, (err) => {
@@ -41,4 +41,30 @@ module.exports.logout = (req, res, next) => {
       req.flash("success", "you are logged out!");
       res.redirect("/listings");
     });
+  };
+
+module.exports.addToCart = async (req, res) => {
+    const { id } = req.params;
+    const user = await User.findById(req.user._id);
+    
+    if (!user.cart.includes(id)) {
+      user.cart.push(id);
+      await user.save();
+      req.flash("success", "Item added to cart successfully!");
+    } else {
+      req.flash("error", "Item is already in your cart.");
+    }
+    
+    res.redirect("/cart");
+  };
+
+module.exports.getCart = async (req, res) => {
+    const user = await User.findById(req.user._id).populate("cart");
+    
+    if (!user.cart || user.cart.length === 0) {
+      req.flash("error", "Your cart is empty.");
+      return res.redirect("/listings");
+    }
+    
+    res.render("listings/cart.ejs", { allListings: user.cart });
   };

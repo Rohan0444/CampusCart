@@ -1,0 +1,31 @@
+$navbar-height: 60px;
+$small-logo-padding: 5px;
+
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  height: $navbar-height;
+
+  &.scrolled {
+    background-color: #6351ce !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.small-logo-container {
+  padding-top: $small-logo-padding;
+  height: $navbar-height;
+  overflow: hidden;
+}
+
+.small-logo {
+  font-size: 2rem;
+  color: white;
+  display: block;
+  transition: padding-top 0.3s ease;
+}
+
+.big-logo-row {
+  background: gold;
+  height: 100vh;
+  width: 100%;
+}

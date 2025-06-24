@@ -1,352 +1,334 @@
 const sampleListings = [
-    {
-      title: "Cozy Beachfront Cottage",
-      description:
-        "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1500,
-      location: "Malibu",
-      country: "United States",
+  {
+    title: "Handwash",
+    description: "Clean your hand",
+    image: {
+      filename: "listingimage1",
+      url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Modern Loft in Downtown",
-      description:
-        "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1200,
-      location: "New York City",
-      country: "United States",
+    price: 150,
+    hostel: "Tagore Hall",
+    roomNumber: "S-2",
+  },
+  {
+    title: "Bluetooth Speaker",
+    description: "Loud and portable speaker with great bass",
+    image: {
+      filename: "listingimage2",
+      url: "https://images.unsplash.com/photo-1585386959984-a4155224a1a7?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Mountain Retreat",
-      description:
-        "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1000,
-      location: "Aspen",
-      country: "United States",
+    price: 799,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "B-12",
+  },
+  {
+    title: "Cycle",
+    description: "Well maintained Hero cycle",
+    image: {
+      filename: "listingimage3",
+      url: "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Historic Villa in Tuscany",
-      description:
-        "Experience the charm of Tuscany in this beautifully restored villa. Explore the rolling hills and vineyards.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 2500,
-      location: "Florence",
-      country: "Italy",
+    price: 2500,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-4",
+  },
+  {
+    title: "Electric Kettle",
+    description: "Boils water in 2 minutes",
+    image: {
+      filename: "listingimage4",
+      url: "https://images.unsplash.com/photo-1587653952726-854bcb2f70f5?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Secluded Treehouse Getaway",
-      description:
-        "Live among the treetops in this unique treehouse retreat. A true nature lover's paradise.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 800,
-      location: "Portland",
-      country: "United States",
+    price: 450,
+    hostel: "Tagore Hall",
+    roomNumber: "S-10",
+  },
+  {
+    title: "Table Lamp",
+    description: "LED lamp with adjustable brightness",
+    image: {
+      filename: "listingimage5",
+      url: "https://images.unsplash.com/photo-1616627981300-168e7d1887fc?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Beachfront Paradise",
-      description:
-        "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 2000,
-      location: "Cancun",
-      country: "Mexico",
+    price: 300,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "A-7",
+  },
+  {
+    title: "Bookshelf",
+    description: "3-tier wooden shelf",
+    image: {
+      filename: "listingimage6",
+      url: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Rustic Cabin by the Lake",
-      description:
-        "Spend your days fishing and kayaking on the serene lake. This cozy cabin is perfect for outdoor enthusiasts.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 900,
-      location: "Lake Tahoe",
-      country: "United States",
+    price: 900,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-18",
+  },
+  {
+    title: "Bean Bag",
+    description: "Comfortable and hardly used",
+    image: {
+      filename: "listingimage7",
+      url: "https://images.unsplash.com/photo-1600121848594-ec0e88de389d?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Luxury Penthouse with City Views",
-      description:
-        "Indulge in luxury living with panoramic city views from this stunning penthouse apartment.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2t5JTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 3500,
-      location: "Los Angeles",
-      country: "United States",
+    price: 700,
+    hostel: "Tagore Hall",
+    roomNumber: "S-5",
+  },
+  {
+    title: "Water Bottle",
+    description: "1-litre steel bottle",
+    image: {
+      filename: "listingimage8",
+      url: "https://images.unsplash.com/photo-1562440499-64c9e3f13cf1?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Ski-In/Ski-Out Chalet",
-      description:
-        "Hit the slopes right from your doorstep in this ski-in/ski-out chalet in the Swiss Alps.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 3000,
-      location: "Verbier",
-      country: "Switzerland",
+    price: 150,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "B-3",
+  },
+  {
+    title: "Study Table",
+    description: "Spacious and sturdy table",
+    image: {
+      filename: "listingimage9",
+      url: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Safari Lodge in the Serengeti",
-      description:
-        "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 4000,
-      location: "Serengeti National Park",
-      country: "Tanzania",
+    price: 1200,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-2",
+  },
+  {
+    title: "Blanket",
+    description: "Soft and warm, ideal for winter",
+    image: {
+      filename: "listingimage10",
+      url: "https://images.unsplash.com/photo-1607082349250-3be0e2f7e594?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Historic Canal House",
-      description:
-        "Stay in a piece of history in this beautifully preserved canal house in Amsterdam's iconic district.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtcGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1800,
-      location: "Amsterdam",
-      country: "Netherlands",
+    price: 400,
+    hostel: "Tagore Hall",
+    roomNumber: "S-8",
+  },
+  {
+    title: "Fan",
+    description: "Table fan, powerful and quiet",
+    image: {
+      filename: "listingimage11",
+      url: "https://images.unsplash.com/photo-1572099606225-3e7c64ed4ed2?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Private Island Retreat",
-      description:
-        "Have an entire island to yourself for a truly exclusive and unforgettable vacation experience.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1618140052121-39fc6db33972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9kZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 10000,
-      location: "Fiji",
-      country: "Fiji",
+    price: 650,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "A-20",
+  },
+  {
+    title: "Desk Organizer",
+    description: "Keeps your stationery neat",
+    image: {
+      filename: "listingimage12",
+      url: "https://images.unsplash.com/photo-1603039465070-71e74c6e8f00?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Charming Cottage in the Cotswolds",
-      description:
-        "Escape to the picturesque Cotswolds in this quaint and charming cottage with a thatched roof.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1602088113235-229c19758e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVhY2glMjB2YWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1200,
-      location: "Cotswolds",
-      country: "United Kingdom",
+    price: 200,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-10",
+  },
+  {
+    title: "Mat",
+    description: "Yoga/exercise mat",
+    image: {
+      filename: "listingimage13",
+      url: "https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Historic Brownstone in Boston",
-      description:
-        "Step back in time in this elegant historic brownstone located in the heart of Boston.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1533619239233-6280475a633a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 2200,
-      location: "Boston",
-      country: "United States",
+    price: 250,
+    hostel: "Tagore Hall",
+    roomNumber: "S-15",
+  },
+  {
+    title: "Dumbbells",
+    description: "Set of 2kg dumbbells",
+    image: {
+      filename: "listingimage14",
+      url: "https://images.unsplash.com/photo-1583454110551-dc0e2b5d4f6b?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Beachfront Bungalow in Bali",
-      description:
-        "Relax on the sandy shores of Bali in this beautiful beachfront bungalow with a private pool.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1602391833977-358a52198938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1800,
-      location: "Bali",
-      country: "Indonesia",
+    price: 350,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "A-5",
+  },
+  {
+    title: "Iron",
+    description: "Steam iron, good condition",
+    image: {
+      filename: "listingimage15",
+      url: "https://images.unsplash.com/photo-1598346996894-0c63697e0d9c?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Mountain View Cabin in Banff",
-      description:
-        "Enjoy breathtaking mountain views from this cozy cabin in the Canadian Rockies.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1500,
-      location: "Banff",
-      country: "Canada",
+    price: 500,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-22",
+  },
+  {
+    title: "Laundry Basket",
+    description: "Foldable and easy to carry",
+    image: {
+      filename: "listingimage16",
+      url: "https://images.unsplash.com/photo-1616627785033-ece14b63ffdc?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Art Deco Apartment in Miami",
-      description:
-        "Step into the glamour of the 1920s in this stylish Art Deco apartment in South Beach.",
-      image:{
-        filename: "listingimage",
-        url: "https://plus.unsplash.com/premium_photo-1670963964797-942df1804579?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1600,
-      location: "Miami",
-      country: "United States",
+    price: 120,
+    hostel: "Tagore Hall",
+    roomNumber: "S-11",
+  },
+  {
+    title: "Casual Shoes",
+    description: "Almost new, size 9",
+    image: {
+      filename: "listingimage17",
+      url: "https://images.unsplash.com/photo-1526178613253-6ce5f3d2dedd?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Tropical Villa in Phuket",
-      description:
-        "Escape to a tropical paradise in this luxurious villa with a private infinity pool in Phuket.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1470165301023-58dab8118cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 3000,
-      location: "Phuket",
-      country: "Thailand",
+    price: 600,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "B-18",
+  },
+  {
+    title: "Backpack",
+    description: "Wildcraft, 35L, durable",
+    image: {
+      filename: "listingimage18",
+      url: "https://images.unsplash.com/photo-1596461404969-9efac03b6835?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Historic Castle in Scotland",
-      description:
-        "Live like royalty in this historic castle in the Scottish Highlands. Explore the rugged beauty of the area.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1585543805890-6051f7829f98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJlYWNoJTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 4000,
-      location: "Scottish Highlands",
-      country: "United Kingdom",
+    price: 900,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-14",
+  },
+  {
+    title: "Curtains",
+    description: "Pair of blackout curtains",
+    image: {
+      filename: "listingimage19",
+      url: "https://images.unsplash.com/photo-1582582560446-0480b6d0a750?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Desert Oasis in Dubai",
-      description:
-        "Experience luxury in the middle of the desert in this opulent oasis in Dubai with a private pool.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 5000,
-      location: "Dubai",
-      country: "United Arab Emirates",
+    price: 350,
+    hostel: "Tagore Hall",
+    roomNumber: "S-13",
+  },
+  {
+    title: "Whiteboard",
+    description: "2x3 feet whiteboard with markers",
+    image: {
+      filename: "listingimage20",
+      url: "https://images.unsplash.com/photo-1622473591134-86cfd514a642?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Rustic Log Cabin in Montana",
-      description:
-        "Unplug and unwind in this cozy log cabin surrounded by the natural beauty of Montana.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1586375300773-8384e3e4916f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1100,
-      location: "Montana",
-      country: "United States",
+    price: 500,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "A-8",
+  },
+  {
+    title: "Mobile Stand",
+    description: "Adjustable stand for phone",
+    image: {
+      filename: "listingimage21",
+      url: "https://images.unsplash.com/photo-1598327105662-5db2cf5d3bda?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Beachfront Villa in Greece",
-      description:
-        "Enjoy the crystal-clear waters of the Mediterranean in this beautiful beachfront villa on a Greek island.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmlsbGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 2500,
-      location: "Mykonos",
-      country: "Greece",
+    price: 100,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-1",
+  },
+  {
+    title: "Slippers",
+    description: "Comfortable rubber slippers",
+    image: {
+      filename: "listingimage22",
+      url: "https://images.unsplash.com/photo-1579338559194-5e4dfd5071c5?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Eco-Friendly Treehouse Retreat",
-      description:
-        "Stay in an eco-friendly treehouse nestled in the forest. It's the perfect escape for nature lovers.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1488462237308-ecaa28b729d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2t5JTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 750,
-      location: "Costa Rica",
-      country: "Costa Rica",
+    price: 150,
+    hostel: "Tagore Hall",
+    roomNumber: "S-20",
+  },
+  {
+    title: "Mirror",
+    description: "Wall mount mirror",
+    image: {
+      filename: "listingimage23",
+      url: "https://images.unsplash.com/photo-1588702547911-636a53687b17?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Historic Cottage in Charleston",
-      description:
-        "Experience the charm of historic Charleston in this beautifully restored cottage with a private garden.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1587381420270-3e1a5b9e6904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1600,
-      location: "Charleston",
-      country: "United States",
+    price: 250,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "B-9",
+  },
+  {
+    title: "Keyboard",
+    description: "Wireless keyboard",
+    image: {
+      filename: "listingimage24",
+      url: "https://images.unsplash.com/photo-1587202372775-e11d715e6f1b?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Modern Apartment in Tokyo",
-      description:
-        "Explore the vibrant city of Tokyo from this modern and centrally located apartment.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 2000,
-      location: "Tokyo",
-      country: "Japan",
+    price: 800,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-6",
+  },
+  {
+    title: "Mouse",
+    description: "Bluetooth mouse",
+    image: {
+      filename: "listingimage25",
+      url: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Lakefront Cabin in New Hampshire",
-      description:
-        "Spend your days by the lake in this cozy cabin in the scenic White Mountains of New Hampshire.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1200,
-      location: "New Hampshire",
-      country: "United States",
+    price: 300,
+    hostel: "Tagore Hall",
+    roomNumber: "S-18",
+  },
+  {
+    title: "USB Cable",
+    description: "1m Type-C cable",
+    image: {
+      filename: "listingimage26",
+      url: "https://images.unsplash.com/photo-1593113599211-4f54872d1af5?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Luxury Villa in the Maldives",
-      description:
-        "Indulge in luxury in this overwater villa in the Maldives with stunning views of the Indian Ocean.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 6000,
-      location: "Maldives",
-      country: "Maldives",
+    price: 100,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "A-19",
+  },
+  {
+    title: "Notebook Set",
+    description: "5 unused notebooks",
+    image: {
+      filename: "listingimage27",
+      url: "https://images.unsplash.com/photo-1584824486539-53bb4646bdbc?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Ski Chalet in Aspen",
-      description:
-        "Hit the slopes in style with this luxurious ski chalet in the world-famous Aspen ski resort.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 4000,
-      location: "Aspen",
-      country: "United States",
+    price: 250,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-12",
+  },
+  {
+    title: "Wired Earphones",
+    description: "JBL earphones, barely used",
+    image: {
+      filename: "listingimage28",
+      url: "https://images.unsplash.com/photo-1610465299993-d6fbab6384eb?auto=format&fit=crop&w=800&q=60",
     },
-    {
-      title: "Secluded Beach House in Costa Rica",
-      description:
-        "Escape to a secluded beach house on the Pacific coast of Costa Rica. Surf, relax, and unwind.",
-      image:{
-        filename: "listingimage",
-        url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      },
-      price: 1800,
-      location: "Costa Rica",
-      country: "Costa Rica",
+    price: 350,
+    hostel: "Tagore Hall",
+    roomNumber: "S-7",
+  },
+  {
+    title: "Laptop Stand",
+    description: "Foldable aluminium stand",
+    image: {
+      filename: "listingimage29",
+      url: "https://images.unsplash.com/photo-1593217384321-e6f469f9d5fc?auto=format&fit=crop&w=800&q=60",
     },
-  ];
-  
+    price: 450,
+    hostel: "Aryabhatta Hall",
+    roomNumber: "B-16",
+  },
+  {
+    title: "Power Bank",
+    description: "10,000mAh Mi Power Bank",
+    image: {
+      filename: "listingimage30",
+      url: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=800&q=60",
+    },
+    price: 700,
+    hostel: "Visweswaraya Hall",
+    roomNumber: "V-8",
+  },
+];
+
 module.exports = { data: sampleListings };

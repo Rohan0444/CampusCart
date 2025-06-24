@@ -1,5 +1,5 @@
 const Listing = require("../models/listing.js");
-
+const User = require("../models/user.js");
 
 module.exports.index = async (req, res) => {
     const allListings = await Listing.find({});
@@ -12,20 +12,25 @@ module.exports.renderNewForm = (req, res) => {
 };
 
 module.exports.showListing = async (req, res) => {
-    let { id } = req.params;
-    const listing = await Listing.findById(id)
-      .populate({
+  const { id } = req.params;
+
+  const listing = await Listing.findById(id)
+    .populate({
+      path: "owner",
+      populate: {
         path: "reviews",
         populate: {
           path: "author",
         },
-      })
-      .populate("owner");
-    if (!listing) {
-      req.flash("error", "Listing you are seaching is doesn't exist");
-      res.redirect(`/listings`);
-    }
-    res.render("listings/show.ejs", { listing });
+      },
+    });
+
+  if (!listing) {
+    req.flash("error", "Listing you are searching for doesn't exist");
+    return res.redirect("/listings");
+  }
+
+  res.render("listings/show.ejs", { listing });
 };
 
 module.exports.createListing = async (req, res, next) => {
@@ -74,4 +79,25 @@ module.exports.destroyListing = async (req, res) => {
     let listing = await Listing.findByIdAndDelete(id);
     req.flash("success", "listing deleted successfully");
     res.redirect(`/listings`);
+};
+
+module.exports.searchListings = async (req, res) => {
+    const { search:query } = req.query;
+    console.log(query);
+    if (!query) {
+        req.flash("error", "Please enter a search term");
+        return res.redirect("/listings");
+    }
+
+    const regex = new RegExp(query, "i"); // Case-insensitive search
+    const allListings = await Listing.find({
+        $or: [
+            { title: regex },
+            { description: regex },
+            { hostel: regex },
+            { roomNumber: regex }
+        ]
+    });
+
+    res.render("listings/search.ejs", { allListings, query });
 };
