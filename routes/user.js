@@ -29,4 +29,8 @@ router.get("/cart", isLoggedIn, userController.getCart);
 
 router.get("/logout", userController.logout);
 
+router.get("/", (req, res) => {
+  res.render("users/home");
+});
+
 module.exports = router;
