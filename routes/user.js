@@ -6,6 +6,8 @@ const { saveRedirectUrl } = require("../middleware.js");
 const { isLoggedIn } = require("../middleware.js");
 const userController = require("../controllers/users.js");
 
+const Listing = require("../models/listing.js");
+
 router
   .route("/signup")
   .get(userController.renderSignup)
@@ -29,8 +31,10 @@ router.get("/cart", isLoggedIn, userController.getCart);
 
 router.get("/logout", userController.logout);
 
-router.get("/", (req, res) => {
-  res.render("users/home");
+router.get("/", async (req, res) => {
+  const allListings = await Listing.find({});
+
+  res.render("listings/index.ejs", { allListings });
 });
 
 module.exports = router;
